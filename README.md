@@ -1,18 +1,25 @@
 # Smart Attendance App
 
-A mobile attendance management app built with **React Native (Expo SDK 54)** and **Firebase**. It has separate panels for **Admin**, **Teacher** and **Parent**, and verifies teacher attendance with **GPS geofencing** and **face/biometric verification**.
+A mobile **student attendance management** app built with **React Native (Expo SDK 54)** and **Firebase**. The administrator manages students and teachers, teachers log in and mark students **Present / Absent** class by class, and parents can check their child's attendance.
 
 ## Features
 
 - **Role-based login** – Admin, Teacher and Parent flows with Firebase Authentication (sign up, login, forgot password)
-- **Admin dashboard** – add and manage teachers/classes, view attendance records
-- **Teacher panel** – mark attendance only when inside the allowed campus area
-- **GPS geofencing** – admin sets the campus location and radius on a map; the teacher's live location is checked against it
-- **Face / biometric verification** – camera capture plus device biometric check before attendance is marked
-- **Attendance reports** – view attendance history stored in Firebase Realtime Database
-- **Parent view** – parents can check attendance information
+- **Admin dashboard** – add students (name, roll no, class) and teachers, and view attendance records
+- **Teacher panel** – teacher logs in, searches a class, marks each student Present/Absent and saves the day's attendance
+- **GPS geofencing** – admin sets the campus location and radius on a map; teachers can mark attendance only from inside the campus
+- **Face / biometric verification** – camera capture plus device biometric check for secure teacher access
+- **Attendance reports** – date-wise and class-wise attendance stored in Firebase Realtime Database
+- **Parent view** – parents can check their child's attendance
 - **Offline location storage** – SQLite (`expo-sqlite`) for saving the college location locally
 - Modern UI with gradients, animations and a shared theme
+
+## How it works
+
+1. **Admin** logs in, adds students and teachers, and sets the campus location (geofence).
+2. **Teacher** logs in from inside the campus, opens a class, and marks every student Present or Absent.
+3. Attendance is saved in Firebase under `attendance/<date>/<class>/<student>`.
+4. **Parents** and the admin can view the attendance reports.
 
 ## Tech Stack
 
@@ -44,8 +51,8 @@ A mobile attendance management app built with **React Native (Expo SDK 54)** and
 ## Getting Started
 
 ```bash
-git clone <this-repo-url>
-cd attendance-app
+git clone https://github.com/Rehan22980/smart-attendance-app.git
+cd smart-attendance-app
 npm install
 npx expo start
 ```
@@ -63,3 +70,4 @@ The app uses the Firebase project configured in `firebaseConfig.js`. To use your
 ## Author
 
 **Rehan Faryad** – BS Computer Science, GC University Faisalabad
+GitHub: [@Rehan22980](https://github.com/Rehan22980)
