@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Smart Attendance App",
+    "slug": "attendance-app",
+    "version": "1.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.rehanfaryad.attendanceapp",
+      "edgeToEdgeEnabled": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "fd0e662c-4447-43df-b8b1-1f8e7550f351"
+      }
+    },
+    "plugins": [
+      "expo-sqlite",
+      "react-native-maps"
+    ]
+  }
+}
